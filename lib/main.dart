@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dashboard/constants/style.dart';
 import 'package:flutter_dashboard/controllers/menu_controller.dart';
 import 'package:flutter_dashboard/controllers/navigation_controller.dart';
 import 'package:flutter_dashboard/site_layout.dart';
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Dash',
       theme: ThemeData(
-          scaffoldBackgroundColor: Colors.white,
+          scaffoldBackgroundColor: light,
           textTheme: GoogleFonts.mulishTextTheme(Theme.of(context).textTheme)
               .apply(bodyColor: Colors.black),
           pageTransitionsTheme: const PageTransitionsTheme(builders: {
