@@ -1,0 +1,85 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_dashboard/constants/style.dart';
+import 'package:flutter_dashboard/pages/overview/widgets/bar_chart.dart';
+import 'package:flutter_dashboard/pages/overview/widgets/revenue_info.dart';
+import 'package:flutter_dashboard/widgets/custom_text.dart';
+
+class RevenueSectionLarge extends StatelessWidget {
+  const RevenueSectionLarge({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(24),
+      margin: const EdgeInsets.symmetric(vertical: 30),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(8),
+        boxShadow: [
+          BoxShadow(
+            offset: const Offset(0, 6),
+            color: lightGrey.withOpacity(.1),
+            blurRadius: 12,
+          ),
+        ],
+        border: Border.all(color: lightGrey, width: .5),
+      ),
+      child: Row(children: [
+        Expanded(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: const [
+              CustomText(
+                text: 'Revenue Chart',
+                size: 20,
+                weight: FontWeight.bold,
+                color: lightGrey,
+              ),
+              SizedBox(
+                width: 600,
+                height: 200,
+                child: BarChartSample1(),
+              )
+            ],
+          ),
+        ),
+        Container(
+          width: 1,
+          height: 120,
+          color: lightGrey,
+        ),
+        Expanded(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Row(
+                children: const [
+                  RevenueInfo(
+                    title: 'Today revenue',
+                    amount: '15',
+                  ),
+                  RevenueInfo(
+                    title: 'last 7 days',
+                    amount: '150',
+                  )
+                ],
+              ),
+              Row(
+                children: const [
+                  RevenueInfo(
+                    title: 'last 30 days',
+                    amount: '1200',
+                  ),
+                  RevenueInfo(
+                    title: 'last 90 days',
+                    amount: '1500',
+                  )
+                ],
+              ),
+            ],
+          ),
+        )
+      ]),
+    );
+  }
+}
